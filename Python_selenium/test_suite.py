@@ -14,7 +14,7 @@ class BasicTest:
 
 class Test_Lambdatest(BasicTest):
 
-    def test_first_scenario(self):
+    def test_case_1(self):
         self.driver.get("https://www.lambdatest.com/selenium-playground")
         tooltip = self.driver.find_element(By.XPATH, "//span[@class='cookie__bar__close hover:underline smtablet:hidden']")
         tooltip.click()
@@ -38,22 +38,22 @@ class Test_Lambdatest(BasicTest):
         self.driver.close()
 
 
-    def test_second_scenario(self):
+    def test_case_2(self):
         self.driver.get("https://www.lambdatest.com/selenium-playground")
         self.driver.find_element(By.XPATH, "//a[normalize-space()='Drag & Drop Sliders']").click()
         range = self.driver.find_element(By.XPATH, "//div[@id='slider3']/div/input[@class='sp__range']")
         if c==1:
              actions = ActionChains(self.driver)
-             actions.click_and_hold(range).move_by_offset(112, 0).release().perform()
+             actions.click_and_hold(range).move_by_offset(114, 0).release().perform()
         elif c==2:
             actions = ActionChains(self.driver)
             actions.click_and_hold(range).move_by_offset(112, 0).release().perform()
         elif c==3:
             actions = ActionChains(self.driver)
-            actions.click_and_hold(range).move_by_offset(112, 0).release().perform()
+            actions.click_and_hold(range).move_by_offset(114, 0).release().perform()
         elif c==4:
             actions = ActionChains(self.driver)
-            actions.click_and_hold(range).move_by_offset(112, 0).release().perform()
+            actions.click_and_hold(range).move_by_offset(212, 0).release().perform()
         verifyRange = self.driver.find_element(By.XPATH, "//div[@id='slider3']/div/output[@id='rangeSuccess']").text
         print(verifyRange)
         if verifyRange == "95":
@@ -63,7 +63,7 @@ class Test_Lambdatest(BasicTest):
         c+=1
         self.driver.close()
 
-    def test_third_scenario(self):
+    def test_case_3(self):
         self.driver.get("https://www.lambdatest.com/selenium-playground")
         time.sleep(5)
         self.driver.find_element(By.XPATH, "//span[@class='cookie__bar__close hover:underline smtablet:hidden']").click()
